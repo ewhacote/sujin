@@ -15,18 +15,15 @@ def solution(board):
     
     visited = [[False]*m for _ in range(n)]
 
-    q = deque()
-
-    q.append((sx, sy, 0))
+    queue = deque([(sx, sy, 0)])
     
-    while q:
-        x, y, level = q.popleft()
+    while queue:
+        x, y, level = queue.popleft()
         
         if board[x][y] == "G":
             answer = level
             break
         
-        # 한방향으로 미끄러져 이동
         for dx, dy in direction:
             scope = 1
             while 1:
@@ -35,7 +32,7 @@ def solution(board):
                 if nx < 0 or nx >= n or ny < 0 or ny >= m or board[nx][ny] == "D":
                     if visited[nx-dx][ny-dy] == False:
                         visited[nx-dx][ny-dy] = True
-                        q.append((nx-dx, ny-dy, level+1))
+                        queue.append((nx-dx, ny-dy, level+1))
                     
                     break
                 
