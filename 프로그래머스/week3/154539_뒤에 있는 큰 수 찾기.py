@@ -1,14 +1,10 @@
 def solution(numbers):
-    answer = []
+    answer = [-1]*len(numbers)
+    stack = []
+    
     for i in range(len(numbers)):
-        bigger_number = -1
-        j = i+1
-        while j<len(numbers):
-            if numbers[i]<numbers[j]:
-                bigger_number = numbers[j]
-                break
-            else:
-                j+=1
-        answer.append(bigger_number)
-                
+        while stack and numbers[stack[-1]]<numbers[i]:
+            answer[stack.pop()]=numbers[i]
+        stack.append(i)
+        
     return answer
