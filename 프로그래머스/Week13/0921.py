@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 def correct(s):
     cnt = 0
     for i in s:
@@ -52,9 +51,3 @@ def solution(p):
         return ""
     answer = dfs(p)
     return answer
-=======
-import math
-
-def solution(w,h):
-    return w*h - (w+h-math.gcd(w,h))
->>>>>>> 5175ca37bb18d0ca3f29960692f61e9d707bc473
