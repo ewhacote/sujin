@@ -7,4 +7,4 @@ def solution(s):
     number_dict = Counter(s) # ~갯수 셈
     
     # 가장 많이 언급된 순서대로 key 저장
-    return [k for k, v in number_dict.most_common(len(number_dict))]``
+    return [k for k, v in number_dict.most_common(len(number_dict))]
